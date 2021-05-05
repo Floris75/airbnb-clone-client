@@ -7,6 +7,7 @@ class House extends React.Component {
     render() {
         return (
             <>
+                <h2>House</h2>
                 <AddingHouse/>
                 <UpdateHouse/>
             </>

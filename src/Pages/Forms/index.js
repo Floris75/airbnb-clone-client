@@ -7,6 +7,7 @@ class Forms extends React.Component {
     render() {
         return (
             <>
+                <h2>Login / Signup</h2>
                 <Login/>
                 <Signup/>
             </>

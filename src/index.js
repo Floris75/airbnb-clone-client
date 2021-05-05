@@ -4,7 +4,6 @@ import './Assets/index.css';
 import App from './App';
 import {AppProvider} from './store';
 
-
 ReactDOM.render(
   <React.StrictMode>
     <AppProvider>
@@ -13,4 +12,3 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
-
