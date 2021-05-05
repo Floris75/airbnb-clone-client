@@ -27,16 +27,16 @@ function App() {
       <Header/>
       <Switch>
         <Route exact path='/' component={Home}/>
-        <Route path='/housedetails/:id' render={(props)=> <HouseDetails {...props} />} />
+        <Route path='/housedetails/:id' render={(props)=> (<HouseDetails {...props} />)} />
         <Route path='/signin' component={Forms}/>
-        <Route path='/signup/host' render={(props) => {<Forms {...props} role="host"/>}}/>
-        <Route path='/signup/guest' render={(props) => {<Forms {...props} role="guest"/>}}/>
+        <Route path='/signup/host' render={(props) => (<Forms {...props} role="host"/>)}/>
+        <Route path='/signup/guest' render={(props) => (<Forms {...props} role="guest"/>)}/>
         <PrivateRoute path='/myHouses' component={Search}/> {/* ETQ hôte, je veux consulter tous mes apparts dispos à la loc */}
         <PrivateRoute path='/myHouses/booking' component={Search}/>  {/* ETQ hôte, je veux consulter toutes les resa de mes apparts */}
         <PrivateRoute path='/myBooking' component={Search}/> {/* ETQ touriste, je veux afficher toutes mes résas*/}
         <PrivateRoute path='/newHouse' component={House}/> {/* ETQ hôte, je veux ajouter une maison en location ou modifier un appartement en location */}
-        <Route path='/search/:city' render={(props)=> <Search {...props} />}/>
-        <Route path='/search/:checkin/:checkout' render={(props)=> <Search {...props} />}/>
+        <Route path='/search/:city' render={(props)=> (<Search {...props} />)}/>
+        <Route path='/search/:checkin/:checkout' render={(props)=> (<Search {...props} />)}/>
       </Switch>
       <Footer/>
     </Router>

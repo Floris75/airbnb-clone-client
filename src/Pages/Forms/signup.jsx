@@ -5,72 +5,71 @@ class Signup extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            firstname: null,
-            lastname: null,
-            email: null,
-            password: null,
-            role: this.props.role
+            firstname: "",
+            lastname: "",
+            email: "",
+            password: "",
+            role: this.props.role,
+            error: ""
         }
     }
 
-   handleChange = (e) => {
-       if (this.state.firstname !== null)
-       this.setState({
-         firstname: e.target.value     
-       })
-       if (this.state.lastname !== null)
-       this.setState({
-         lastname: e.target.value     
-       })
-       if (this.state.email !== null)
-       this.setState({
-         email: e.target.value     
-       })
-       if (this.state.password !== null)
-       this.setState({
-         password: e.target.value     
-       })
-   }
+   handleChangeFirstname = (e) => {
+    const firstname = e.target.value
+    this.setState({firstname})
+    }
+
+    handleChangeLastname = (e) => {
+        const lastname = e.target.value
+        this.setState({lastname})
+    }
+
+    handleChangeEmail = (e) => {
+        const email = e.target.value
+        this.setState({email})
+        }
+        
+    handleChangePassword = (e) => {
+        const password = e.target.value
+        this.setState({password})
+    }
 
     sendSignup = async () => {
-        const user = {firstname: this.state.firstname, lastname: this.state.lastname, email: this.state.email, password: this.state.password, role: this.state.role};
-
+        const user = {first_name: this.state.firstname, last_name: this.state.lastname, email: this.state.email, password: this.state.password, role: this.state.role};
         try {
             const response = await userService.signup(user);
-            if (response) {
+            if(response) {
                 this.props.history.push('/signin');
             }
         } catch(e) {
-            this.setState({error: e.response.data.error});
+            this.setState({error: e.response});
         }
-
     }
 
     render() {
         return (
             <form>
-                <h2>Sign up !</h2>
                 <div className="form-group">
                     <label>First name</label>
-                    <input  value={this.state.firstname} onChange={this.handleChange} type="text" className="form-control" placeholder="First name"/>
+                    <input  value={this.state.firstname} onChange={this.handleChangeFirstname} type="text" className="form-control" placeholder="First name"/>
                 </div>
 
                 <div className="form-group">
                     <label>Last name</label>
-                    <input value={this.state.lastname} onChange={this.handleChange} type="text" className="form-control" placeholder="Last name" />
+                    <input value={this.state.lastname} onChange={this.handleChangeLastname} type="text" className="form-control" placeholder="Last name" />
                 </div>
 
                 <div className="form-group">
                     <label>Email address</label>
-                    <input value={this.state.email} onChange={this.handleChange} type="email" className="form-control" placeholder="Enter email" />
+                    <input value={this.state.email} onChange={this.handleChangeEmail} type="email" className="form-control" placeholder="Enter email" />
                 </div>
 
                 <div className="form-group">
                     <label>Password</label>
-                    <input value={this.state.password} onChange={this.handleChange} type="password" className="form-control" placeholder="Enter password"/>
+                    <input value={this.state.password} onChange={this.handleChangePassword} type="password" className="form-control" placeholder="Enter password"/>
                 </div>
 
-                <button onClick={this.sendSignup} type="submit" className="signup-btn">Sign Up</button>
+                <button onClick={this.sendSignup} type="button" className="signup-btn">Sign Up</button>
 
             </form>
         )

@@ -30,7 +30,8 @@ class Login extends React.Component {
             this.context.setAuth(true);
             this.props.history.push('/');
         } catch(e) {
-            this.setState({error: e.response.data.error});
+            console.log(e.response)
+            this.setState({error: e.response});
         }
     }
 
@@ -42,7 +43,7 @@ class Login extends React.Component {
                         {this.state.error && <h6>{this.state.error}</h6>}
                         <input type="text" name="email" value={this.state.email} onChange={this.handleChange} />
                         <input type="password" name="password" value={this.state.password} onChange={this.handleChange} />
-                        <button value="login" handleClick={this.handleClick}>Log in</button>
+                        <button type="button" onClick={this.handleClick}>Log in</button>
                     </div>
         )}
         </appContext.Consumer>

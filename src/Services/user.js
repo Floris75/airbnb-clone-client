@@ -1,11 +1,13 @@
 import api from './api';
 
 const userService = {
-    signup: async (email, password, first_name, last_name, role) => {
-        const user = {email, password, first_name, last_name, role};
-
+    signup: async (user) => {
         return await api.post('/signup', user)
 
+    },
+    login: async (email, password) => {
+        const user = {email, password}
+        return await api.post('/signin', user)
     }
 }
 
