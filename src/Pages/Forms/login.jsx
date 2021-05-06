@@ -28,6 +28,7 @@ class Login extends React.Component {
             const response = await userService.login(email, password);
             localStorage.setItem('token', response.data.token);
             this.context.setAuth(true);
+            this.context.setUser(response.data.user);
             this.props.history.push('/');
         } catch(e) {
             console.log(e.response)
