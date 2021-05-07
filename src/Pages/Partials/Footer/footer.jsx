@@ -3,20 +3,25 @@ import appContext from '../../../store';
 
 class Footer extends React.Component {
     static contextType = appContext;
+
     render () {
+        console.log("context : ", this.context)
         return (
+            <appContext.Consumer>
+            {(store) => (
             <div>
                 <h2>Footer</h2>
                 <nav>
                     <ul>
-                        <a href="/" ><li>Home</li></a>
-                        {   this.context.user === null
-                                ?null
+                        <a href="/housedetails/1" ><li>Home</li></a>
+                        {   
+                            this.context.user === null
+                                ? null
                                 : !this.context.user.role
                                     ? null
-                                    : this.context.user.role === "Host"
+                                    : this.context.user.role === "host"
                                         ? <a href="/myHouses" ><li>My Houses</li></a>
-                                        : this.context.user.role === "Guest"
+                                        : this.context.user.role === "guest"
                                             ? <a href="/myBooking" ><li>My Bookings</li></a>
                                             : null
                         }
@@ -33,6 +38,8 @@ class Footer extends React.Component {
                 <hr></hr>
                 <p> clone airbnb 2021 © - by Laura, Esther, Matildad and Floris</p>
             </div>
+            )}
+            </appContext.Consumer>
         )
     }
 

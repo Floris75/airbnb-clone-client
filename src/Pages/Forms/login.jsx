@@ -38,16 +38,16 @@ class Login extends React.Component {
 
     render() {
         return (
-        <appContext.Consumer>
-        {(store) => (
+            <appContext.Consumer>
+            {(store) => (
                     <div>
                         {this.state.error && <h6>{this.state.error}</h6>}
                         <input type="text" name="email" value={this.state.email} onChange={this.handleChange} />
                         <input type="password" name="password" value={this.state.password} onChange={this.handleChange} />
                         <button type="button" onClick={this.handleClick}>Log in</button>
                     </div>
-        )}
-        </appContext.Consumer>
+                    )}
+            </appContext.Consumer>
         )
     }
 }
