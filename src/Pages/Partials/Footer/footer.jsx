@@ -20,6 +20,7 @@ class Footer extends React.Component {
                                             ? <a href="/myBooking" ><li>My Bookings</li></a>
                                             : null
                         }
+                       
                     </ul>
                 </nav>
                 <div className="SocialNetwork">

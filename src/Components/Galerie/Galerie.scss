@@ -1,0 +1,26 @@
+.galerie-container {
+
+    padding:60px;
+
+    .links-galerie-container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;  
+        color:#484848;
+    }
+}
+
+.img-container {
+    width: 100%;
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+    
+    img {
+        width: 20%;
+        margin-left: 5px;
+        height: 400px;
+    }
+}
+

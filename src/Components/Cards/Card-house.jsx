@@ -1,7 +1,7 @@
 import React from 'react';
 import './Card-house.scss';
 
-// import cardImage from '../../Assets/images/Place1.png';
+import cardImage from '../../Assets/images/Place1.png';
 
 class CardHouse extends React.Component{
 
@@ -9,7 +9,7 @@ class CardHouse extends React.Component{
         return (
 
             <div className = "cardHouse">
-                <img className ="cardImage"src={this.props.src} alt="place  "/>
+                <img className ="cardImage"src={cardImage} alt="place  "/>
                 <a href={`/housedetails/${this.props.id}`}><h3>Escapades en pleine nature </h3></a>
                 
                 <p>Des expériences qui vous plongent en pleine nature</p>
