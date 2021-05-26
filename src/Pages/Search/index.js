@@ -1,10 +1,11 @@
 import React from "react";
+import MyHouses from './my_houses'
 
 class Search extends React.Component {
     render () {
         return (
             <div>
-                <h2>SearchPage</h2>
+                <MyHouses/>
             </div>
         )
     }

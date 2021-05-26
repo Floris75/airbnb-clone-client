@@ -1,0 +1,31 @@
+footer {
+    background: #f7f7f7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .links {
+        display: flex;
+        justify-content: space-between;
+        gap: 50px;
+
+        .SocialNetwork {
+            display:flex;
+            flex-direction: column;
+        }
+
+    }
+
+    li {
+        list-style-type: none;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+        &:hover {
+            font-weight: bold;
+        }
+    }
+}

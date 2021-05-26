@@ -15,12 +15,12 @@ class Forms extends React.Component {
                     </div>
                     : this.props.location.pathname === "/signup/host"
                         ? <div>
-                            <h2>Signup Host</h2>
+                            <h2>Inscription hôte</h2>
                             <Signup {...this.props} role={this.props.role} />
                         </div>
                         : this.props.location.pathname === "/signup/guest"
                             ? <div>
-                                <h2>Signup Guest</h2>
+                                <h2>Inscription touriste</h2>
                                 <Signup {...this.props} role={this.props.role} />
                             </div>
                             : null

@@ -1,4 +1,4 @@
-import './Assets/App.css';
+import './Assets/App.scss';
 import Header from "./Pages/Partials/Header";
 import Footer from "./Pages/Partials/Footer";
 import Home from "./Pages/Home";
@@ -31,7 +31,7 @@ function App() {
         <Route path='/signin' component={Forms}/>
         <Route path='/signup/host' render={(props) => (<Forms {...props} role="host"/>)}/>
         <Route path='/signup/guest' render={(props) => (<Forms {...props} role="guest"/>)}/>
-        <PrivateRoute path='/myHouses' component={Search}/> {/* ETQ hôte, je veux consulter tous mes apparts dispos à la loc */}
+        <PrivateRoute path='/myhouses' component={Search}/> {/* ETQ hôte, je veux consulter tous mes apparts dispos à la loc */}
         <PrivateRoute path='/myHouses/booking' component={Search}/>  {/* ETQ hôte, je veux consulter toutes les resa de mes apparts */}
         <PrivateRoute path='/myBooking' component={Search}/> {/* ETQ touriste, je veux afficher toutes mes résas*/}
         <PrivateRoute path='/newHouse' component={House}/> {/* ETQ hôte, je veux ajouter une maison en location ou modifier un appartement en location */}

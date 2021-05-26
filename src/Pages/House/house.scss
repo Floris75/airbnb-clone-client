@@ -1,0 +1,64 @@
+.container-addhouse {
+    margin: 30px 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        margin: 20px 20px;
+        gap: 15px;
+    }
+
+    input {
+        border-radius: 5px;
+        border: 1px solid grey;
+        padding: 5px;
+    }
+
+    button {
+        margin: 15px 60px;
+        background: #008589;
+        color: white;
+        padding: 10px;
+        border-radius: 8px;
+        border: none;
+        
+        &:hover {
+            font-weight: bold;
+        }
+    }
+}
+
+.container-image {
+    display: none;
+}
+
+@media screen and (min-width: 500px) {
+    form {
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+}
+
+@media screen and (min-width: 850px) {
+
+    .container-addhouse {
+        display: flex;
+    }
+    .container-image {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        width: 35%;
+        img {
+            width:100%;
+            border-radius: 8px;
+        }
+    }
+}
+

@@ -1,0 +1,23 @@
+.cardHouse{
+    
+    width: 20%;
+    margin: 20px;
+    
+    .cardImage{
+        object-fit: cover;
+        height: auto;
+        width: 100%;
+        border-radius: 8px;
+    }
+
+    h3{
+        font-size: 18px;
+        color: rgb(34,34,34);
+    }
+
+    p{
+        font-size: 14px;
+        color: #484848;
+    }
+
+}

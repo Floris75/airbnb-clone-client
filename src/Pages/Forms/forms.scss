@@ -1,0 +1,27 @@
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    
+}
+
+input {
+    border-radius: 5px;
+    border: 1px solid grey;
+    padding: 5px;
+    }
+
+button {
+    margin: 15px 60px;
+    background: #008589;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+        
+        &:hover {
+            font-weight: bold;
+        }
+}
